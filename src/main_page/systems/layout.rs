@@ -26,7 +26,7 @@ pub fn build_main_page(commands: &mut Commands, asset_server: &Res<AssetServer>)
             ..default()
         }, 
         MainPage {},
-        BackgroundColor(Color::srgb(0.25, 0.1, 0.1))
+        BackgroundColor(Color::srgb(1.0, 1.0, 1.0))
     ))
     .with_children(|parent|{
         // Title

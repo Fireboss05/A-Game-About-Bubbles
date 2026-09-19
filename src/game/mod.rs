@@ -3,6 +3,7 @@ use bevy::prelude::*;
 pub mod components;
 pub mod styles;
 pub mod systems;
+pub mod elements;
 
 use systems::layout::*;
 

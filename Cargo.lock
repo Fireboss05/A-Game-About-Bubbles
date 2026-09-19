@@ -2645,7 +2645,6 @@ name = "game-about-bubble"
 version = "0.1.0"
 dependencies = [
  "bevy",
- "bevy_ui",
  "encase_derive_impl",
 ]
 
