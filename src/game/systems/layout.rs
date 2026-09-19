@@ -24,7 +24,22 @@ pub fn build_game(commands: &mut Commands, asset_server: &Res<AssetServer>) -> E
         }, 
         Game {},
         BackgroundColor(Color::srgb(0.1, 0.25, 0.1))
-    )).id();
+    ))
+    .with_children(|parent|{
+        //Searche Bar / Select bar
+        parent.spawn(()
+
+        );
+        //AI Results
+        parent.spawn(()
+
+        );
+        //internet results
+        parent.spawn(()
+
+        );
+    })
+    .id();
 
     game_entity //return
 }

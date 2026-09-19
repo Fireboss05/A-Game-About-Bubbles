@@ -1,8 +1,8 @@
 use bevy::prelude::*;
 
-mod components;
-mod styles;
-mod systems;
+pub mod components;
+pub mod styles;
+pub mod systems;
 
 use systems::layout::*;
 
