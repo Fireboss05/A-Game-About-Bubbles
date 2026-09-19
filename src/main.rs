@@ -1,9 +1,11 @@
 use bevy::{DefaultPlugins, app::prelude::*};
 
+mod main_page;
+use main_page::MainPagePlugin;
 
 fn main() {
     let mut app = App::new();
-    app.add_plugins(DefaultPlugins);
+    app.add_plugins((DefaultPlugins, MainPagePlugin));
     app.add_systems(Startup, setup);
     app.add_systems(Update, update);
 
@@ -15,5 +17,5 @@ fn setup() {
 }
 
 fn update() {
-    println!("Update");
+    // println!("Update");
 }

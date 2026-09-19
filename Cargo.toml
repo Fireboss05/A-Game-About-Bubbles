@@ -5,4 +5,5 @@ edition = "2024"
 
 [dependencies]
 bevy = "0.19.1"
+bevy_ui = "0.19.1"
 encase_derive_impl = "=0.12.1"
