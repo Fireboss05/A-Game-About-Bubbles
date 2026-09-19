@@ -1,4 +1,4 @@
 use bevy::prelude::Component;
 
 #[derive(Component)]
-pub struct MainPage {}
+pub struct Game {}
