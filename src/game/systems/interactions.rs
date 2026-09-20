@@ -2,23 +2,18 @@ use bevy::prelude::*;
 
 use bevy::{
     asset::Assets, ecs::{
-        query::{Changed, With},
-        system::{Query, ResMut},
-    }, state::state::NextState, ui::Interaction,
+        system::ResMut,
+    }, state::state::NextState,
 };
 
 use crate::game::components::ChoiceSelected;
 use crate::{
     AppState, game::{
-        assets::{ChoiceDefinitions, QuestionDefinitions}, components::{ChoiceButton, ChoiceDefinition}, ressources::GameData,
+        assets::{ChoiceDefinitions, QuestionDefinitions}, components::ChoiceDefinition, ressources::GameData,
     }, main_page::ressources::GameSession,
 };
 
 pub fn interact_with_choice_button(
-    // mut button_query: Query<
-    //     (&Interaction, &ChoiceButton),
-    //     (Changed<Interaction>, With<ChoiceButton>),
-    // >,
     mut messages: MessageReader<ChoiceSelected>,
     game_data: Res<GameData>,
     questions: Res<Assets<QuestionDefinitions>>,

@@ -5,7 +5,7 @@ use crate::AppState;
 use crate::game::assets::{ChoiceDefinitions, QuestionDefinitions};
 use crate::game::ressources::GameData;
 use crate::main_page::assets::CharacterDefinitions;
-use crate::main_page::ressources::{GameSession, MainPageData};
+use crate::main_page::ressources::MainPageData;
 
 pub fn transition_to_main_page_state(
     keyboard_input: Res<ButtonInput<KeyCode>>,

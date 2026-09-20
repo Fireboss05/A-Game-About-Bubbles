@@ -6,14 +6,7 @@ pub struct Browser {}
 
 // ======= Search Bar ========
 #[derive(Component, Clone, Copy, Default)]
-pub struct SearchBar {
-    pub question_id: u32,
-}
-
-#[derive(Component, Clone, Copy, Default)]
-pub struct ChoiceButton {
-    pub choice_id: u32,
-}
+pub struct SearchBar {}
 
 #[derive(Message, Clone, Copy, Default)]
 pub struct ChoiceSelected {
