@@ -4,7 +4,6 @@ use bevy::platform::collections::HashMap;
 
 use bevy::feathers::theme::ThemeProps;
 
-const GRAY_4: Color = Color::oklcha(0.47, 0.011, 278.38, 1.0);
 pub fn create_light_theme() -> ThemeProps {
     ThemeProps {
         color: HashMap::from([

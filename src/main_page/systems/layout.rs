@@ -1,9 +1,10 @@
 use bevy::prelude::*;
 
-use crate::main_page::{components::{CharacterButton, MainPage, QuitButton}, styles::{NORMAL_BUTTON_COLOR, button_style, get_button_text}};
+use crate::main_page::{assets::CharacterDefinitions, components::{CharacterButton, MainPage, QuitButton}, ressources::GameData, styles::{NORMAL_BUTTON_COLOR, button_style, get_button_text}};
 
-pub fn spawn_main_page(mut commands: Commands, asset_server: Res<AssetServer>) {
-    build_main_page(&mut commands, &asset_server);
+pub fn spawn_main_page(mut commands: Commands, asset_server: Res<AssetServer>,
+    game_data: Res<GameData>, characters: Res<Assets<CharacterDefinitions>>) {
+    build_main_page(&mut commands, &asset_server, game_data, characters);
     println!("main_page Spawned");
 }
 
@@ -15,7 +16,8 @@ pub fn despawn_main_page(mut commands: Commands, main_page_query: Query<Entity, 
     
 }
 
-pub fn build_main_page(commands: &mut Commands, asset_server: &Res<AssetServer>) -> Entity {
+pub fn build_main_page(commands: &mut Commands, asset_server: &Res<AssetServer>, 
+    game_data: Res<GameData>, characters: Res<Assets<CharacterDefinitions>>) -> Entity {
     let main_page_entity: Entity = commands.spawn((Node{
             // box_sizing: BoxSizing::BorderBox,
             width: Val::Percent(100.0),
@@ -33,19 +35,25 @@ pub fn build_main_page(commands: &mut Commands, asset_server: &Res<AssetServer>)
         parent.spawn((
 
         ));
+
         //Character Button (stories)
-        parent.spawn((
-            Button,
-            button_style(),
-            BackgroundColor(NORMAL_BUTTON_COLOR),
-            CharacterButton{}
-        ))
-        .with_children(|parent|{
-            parent.spawn((
-                Text::new("Character"),
-                get_button_text(asset_server)
-            ));
-        });
+        if let Some(data) = characters.get(&game_data.characters) {
+            for character in &data.characters {
+                parent.spawn((
+                    Button,
+                    button_style(),
+                    BackgroundColor(NORMAL_BUTTON_COLOR),
+                    CharacterButton{}
+                ))
+                .with_children(|parent|{
+                    parent.spawn((
+                        Text::new(character.name.clone()),
+                        get_button_text(asset_server)
+                    ));
+                });
+                println!("{}", character.name);
+            }
+        }
 
         //Quit Button
         parent.spawn((
