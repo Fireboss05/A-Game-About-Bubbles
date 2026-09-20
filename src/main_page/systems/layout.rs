@@ -43,7 +43,9 @@ pub fn build_main_page(commands: &mut Commands, asset_server: &Res<AssetServer>,
                     Button,
                     button_style(),
                     BackgroundColor(NORMAL_BUTTON_COLOR),
-                    CharacterButton{}
+                    CharacterButton{
+                        character_name: character.name.clone(),
+                    }
                 ))
                 .with_children(|parent|{
                     parent.spawn((

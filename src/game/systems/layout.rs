@@ -1,17 +1,18 @@
 use bevy::prelude::*;
 
-use crate::game::{
+use crate::{game::{
     assets::{ChoiceDefinitions, QuestionDefinitions}, components::{
         // AIResult, 
         Browser, ChoiceDefinition, QuestionDefinition, 
         // SearchBar, Website
     }, elements::search_bar::layout::*, ressources::GameData
-};
+}, main_page::ressources::GameSession};
 
 
 pub fn spawn_game(mut commands: Commands, game_data: Res<GameData>, 
-    questions: Res<Assets<QuestionDefinitions>>, choices: Res<Assets<ChoiceDefinitions>>) {
-    commands.spawn_scene(build_game(game_data, questions, choices));
+    questions: Res<Assets<QuestionDefinitions>>, choices: Res<Assets<ChoiceDefinitions>>,
+    game_session: Res<GameSession> ) {
+    commands.spawn_scene(build_game(game_data, questions, choices, game_session));
     println!("game Spawned");
 }
 
@@ -24,7 +25,8 @@ pub fn despawn_game(mut commands: Commands, game_query: Query<Entity, With<Brows
     
 }
 
-pub fn build_game(game_data: Res<GameData>, questions: Res<Assets<QuestionDefinitions>>, choices: Res<Assets<ChoiceDefinitions>>
+pub fn build_game(game_data: Res<GameData>, questions: Res<Assets<QuestionDefinitions>>, choices: Res<Assets<ChoiceDefinitions>>,
+    game_session: Res<GameSession>
 ) -> impl Scene {
     let questions_data = questions
         .get(&game_data.questions)
@@ -34,8 +36,8 @@ pub fn build_game(game_data: Res<GameData>, questions: Res<Assets<QuestionDefini
         .questions
         .iter()
         .find(|question| {
-            question.character_name == "Daniel"
-                && question.id == 1
+            question.character_name == game_session.character_name.clone().expect("No character selected")
+                && question.id == game_session.question_number.expect("No question selected")
         })
         .expect("Question not found");
 
@@ -51,7 +53,6 @@ pub fn build_game(game_data: Res<GameData>, questions: Res<Assets<QuestionDefini
         })
         .cloned()
         .collect();
-    
     bsn! {
         Node{
             // box_sizing: BoxSizing::BorderBox,
@@ -59,7 +60,7 @@ pub fn build_game(game_data: Res<GameData>, questions: Res<Assets<QuestionDefini
             height: Val::Percent(100.0),
             padding: UiRect::all(Val::Px(20.0))
         }
-        Browser
+        Browser {}
         BackgroundColor(Color::srgb(0.968627451, 0.8705882353, 0.6705882353))
         Children [
             //Searche Bar / Select bar

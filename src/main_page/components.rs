@@ -18,7 +18,9 @@ pub struct CharacterDefinitionsFile {
 }
 
 #[derive(Component)]
-pub struct CharacterButton {}
+pub struct CharacterButton {
+    pub character_name: String
+}
 
 #[derive(Component)]
 pub struct QuitButton {}

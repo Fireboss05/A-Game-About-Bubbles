@@ -6,7 +6,9 @@ pub struct Browser {}
 
 // ======= Search Bar ========
 #[derive(Component, Clone, Copy, Default)]
-pub struct SearchBar {}
+pub struct SearchBar {
+    pub question_id: u32,
+}
 
 
 #[derive(Deserialize, Debug, Clone)]
