@@ -50,9 +50,3 @@ pub struct ChoiceMenuItem {
 // ======= Website ========
 // #[derive(Component, Clone, Copy, Default)]
 // pub struct Website {}
-
-#[derive(Component)]
-pub struct VictoryScreen;
-
-#[derive(Component)]
-pub struct DefeatScreen;

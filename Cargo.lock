@@ -2641,17 +2641,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "game-about-bubble"
-version = "0.1.0"
-dependencies = [
- "bevy",
- "encase_derive_impl",
- "serde",
- "serde_json",
- "thiserror 2.0.20",
-]
-
-[[package]]
 name = "gethostname"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3278,6 +3267,17 @@ name = "lazy_static"
 version = "1.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe"
+
+[[package]]
+name = "leave-the-social-bubble"
+version = "0.1.0"
+dependencies = [
+ "bevy",
+ "encase_derive_impl",
+ "serde",
+ "serde_json",
+ "thiserror 2.0.20",
+]
 
 [[package]]
 name = "lewton"
