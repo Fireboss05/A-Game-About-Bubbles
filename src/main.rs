@@ -28,6 +28,7 @@ mod systems;
 use systems::*;
 
 use crate::game::GameDataPlugin;
+use crate::game::components::ChoiceSelected;
 use crate::main_page::MainPageDataPlugin;
 use crate::main_page::ressources::GameSession;
 
@@ -36,6 +37,7 @@ fn main() {
     app.add_plugins(DefaultPlugins);
     app.init_state::<AppState>();
     app.init_resource::<GameSession>();
+    app.add_message::<ChoiceSelected>();
 
     app.add_plugins((MainPagePlugin, MainPageDataPlugin, GamePlugin, GameDataPlugin, FeathersPlugins));
     app.insert_resource(UiTheme(create_light_theme()));

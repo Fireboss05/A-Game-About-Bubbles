@@ -1,4 +1,4 @@
-use bevy::prelude::Component;
+use bevy::{ecs::message::Message, prelude::Component};
 use serde::Deserialize;
 
 #[derive(Component, Clone, Copy, Default)]
@@ -9,6 +9,17 @@ pub struct Browser {}
 pub struct SearchBar {
     pub question_id: u32,
 }
+
+#[derive(Component, Clone, Copy, Default)]
+pub struct ChoiceButton {
+    pub choice_id: u32,
+}
+
+#[derive(Message, Clone, Copy, Default)]
+pub struct ChoiceSelected {
+    pub choice_id: u32,
+}
+
 
 
 #[derive(Deserialize, Debug, Clone)]
@@ -23,6 +34,7 @@ pub struct ChoiceDefinition{
     pub id: u32,
     pub question_id: u32,
     pub text: String,
+    pub value: u32
 }
 
 #[derive(Deserialize)]

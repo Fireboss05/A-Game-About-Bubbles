@@ -1,4 +1,4 @@
-use bevy::prelude::*;
+use bevy::{prelude::*, ui_widgets::Activate};
 
 use crate::game::elements::search_bar::styles::*;
 use crate::game::components::*;
@@ -45,6 +45,15 @@ fn build_menu_items(choices: Vec<ChoiceDefinition>) -> impl SceneList {
                         ThemedText
                     }
                 }
+                on(move |_: On<Activate>, mut messages: MessageWriter<ChoiceSelected>| {
+                    messages.write(ChoiceSelected{
+                        choice_id: id,
+                    });
+                    info!("Menu item {} clicked!", id);
+                })
+                // ChoiceButton{
+                //     choice_id:id
+                // }
                 search_bar_menu_item()
             )
         }}

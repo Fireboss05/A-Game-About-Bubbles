@@ -11,6 +11,6 @@ pub struct MainPageData {
 pub struct GameSession {
     pub character_name: Option<String>,
     pub question_number: Option<u32>,
-    pub total_score: Option<u32>,
-    pub last_score: Option<u32> 
+    pub total_score: u32,
+    pub last_score: u32 
 }
