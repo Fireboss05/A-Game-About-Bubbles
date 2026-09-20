@@ -24,27 +24,39 @@ pub fn interact_with_choice_button(
     for choice_message in messages.read() {
         println!("Choice selected: {}", choice_message.choice_id);
 
-        let choice_selected: ChoiceDefinition = choices
+        let choice_selected = choices
             .get(&game_data.choices)
             .expect("Choices not loaded")
             .choices
             .iter()
             .find(|choice| choice.id == choice_message.choice_id)
-            .expect("No choice found for selected choice").clone();
+            .expect("No choice found for selected choice");
         
         game_session.last_score = choice_selected.value;
         game_session.total_score += 9 - choice_selected.value;
         
         let character_name = game_session
             .character_name
-            .as_deref()
+            .clone()
             .expect("No character selected");
 
         let current_question = game_session
             .question_number
             .expect("No current question");
 
-        if won(choice_selected){
+        let question =  questions
+            .get(&game_data.questions)
+            .expect("Questions not loaded")
+            .questions
+            .iter()
+            .find(|question| {
+                question.id == current_question
+            }).expect("No current question object");
+
+        game_session.last_question_max = question.max_score;
+        game_session.last_question_min = question.min_score;
+
+        if !won(choice_selected.clone()){
             let next_question = questions
                 .get(&game_data.questions)
                 .expect("Questions not loaded")
@@ -74,5 +86,5 @@ pub fn interact_with_choice_button(
 }
 
 pub fn won(choice_selected: ChoiceDefinition) -> bool{
-    choice_selected.value != 9
+    choice_selected.value == 9
 }

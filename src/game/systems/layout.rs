@@ -8,6 +8,7 @@ use crate::{game::{
     }, elements::search_bar::layout::*, ressources::GameData
 }, main_page::ressources::GameSession};
 
+use rand::seq::SliceRandom;
 
 pub fn spawn_game(mut commands: Commands, game_data: Res<GameData>, 
     questions: Res<Assets<QuestionDefinitions>>, choices: Res<Assets<ChoiceDefinitions>>,
@@ -45,14 +46,32 @@ pub fn build_game(game_data: Res<GameData>, questions: Res<Assets<QuestionDefini
         .get(&game_data.choices)
         .expect("Choices not loaded");
 
-    let selected_choices: Vec<ChoiceDefinition> = choices_data
+    let mut last_answer_value = game_session.last_score;
+    if last_answer_value < 1{
+        last_answer_value = 2;
+        println!("last_answer < 1")
+    }
+    if game_session.last_question_max == 3 && selected_question.max_score == 9{
+        last_answer_value *= 3;
+        println!("last_question_max == 3 && selected_question.max_score == 9")
+    }
+    println!("last_answer_value: {}" , last_answer_value);
+    println!("game_session.last_question_max {}", game_session.last_question_max );
+    println!("game_session.last_question_min {}", game_session.last_question_min );
+    let mut selected_choices: Vec<ChoiceDefinition> = choices_data
         .choices
         .iter()
         .filter(|choice| {
+            println!("choice.value {}", choice.value);
             choice.question_id == selected_question.id
+            && (choice.value.abs_diff(last_answer_value) <= 1 || (
+            choice.value.abs_diff(last_answer_value) <= 2 && (last_answer_value == game_session.last_question_max 
+                || last_answer_value == game_session.last_question_min)))
         })
         .cloned()
         .collect();
+    let mut rng = rand::rng();
+    selected_choices.shuffle(&mut rng);
     bsn! {
         Node{
             // box_sizing: BoxSizing::BorderBox,

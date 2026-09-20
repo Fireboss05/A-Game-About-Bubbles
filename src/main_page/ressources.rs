@@ -12,5 +12,7 @@ pub struct GameSession {
     pub character_name: Option<String>,
     pub question_number: Option<u32>,
     pub total_score: u32,
-    pub last_score: u32 
+    pub last_score: u32,
+    pub last_question_min: u32,
+    pub last_question_max: u32
 }

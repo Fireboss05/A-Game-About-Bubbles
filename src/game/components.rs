@@ -18,6 +18,8 @@ pub struct QuestionDefinition{
     pub id: u32,
     pub character_name: String,
     pub text: String,
+    pub max_score: u32,
+    pub min_score: u32
 }
 
 #[derive(Deserialize, Debug, Clone)]

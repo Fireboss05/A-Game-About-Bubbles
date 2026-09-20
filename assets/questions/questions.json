@@ -4,71 +4,71 @@
             "id": 1,
             "character_name":"Daniel",
             "text":"How to...",
-            "max score": 3,
-            "min score": 1
+            "max_score": 3,
+            "min_score": 1
         },
          {
             "id": 2,
             "character_name":"Daniel",
             "text":"What is...",
-            "max score": 3,
-            "min score": 1
+            "max_score": 3,
+            "min_score": 1
         },
          {
             "id": 3,
             "character_name":"Daniel",
             "text":"Tips on...",
-            "max score": 3,
-            "min score": 1
+            "max_score": 3,
+            "min_score": 1
         },
          {
             "id": 4,
             "character_name":"Daniel",
             "text":"How to...",
-            "max score": 9,
-            "min score": 3
+            "max_score": 9,
+            "min_score": 3
         },
           {
             "id": 5,
             "character_name":"Daniel",
             "text":"Are there any...",
-            "max score": 9,
-            "min score": 3
+            "max_score": 9,
+            "min_score": 3
         },
           {
             "id": 6,
             "character_name":"Daniel",
             "text":"How can I...",
-            "max score": 9,
-            "min score": 3
+            "max_score": 9,
+            "min_score": 3
         },
           {
             "id": 7,
             "character_name":"Daniel",
             "text":"Is there...",
-            "max score": 9,
-            "min score": 3
+            "max_score": 9,
+            "min_score": 3
         },
           {
             "id": 8,
             "character_name":"Daniel",
             "text":"How to...",
-            "max score": 9,
-            "min score": 3
+            "max_score": 9,
+            "min_score": 3
         },
           {
             "id": 9,
             "character_name":"Daniel",
             "text":"How do I...",
-            "max score": 9,
-            "min score": 3
+            "max_score": 9,
+            "min_score": 3
         },
           {
             "id": 10,
             "character_name":"Daniel",
             "text":"What are the...",
-            "max score": 9,
-            "min score": 3
+            "max_score": 9,
+            "min_score": 3
         }
     ]
 }
