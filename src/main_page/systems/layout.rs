@@ -1,9 +1,9 @@
 use bevy::prelude::*;
 
-use crate::main_page::{assets::CharacterDefinitions, components::{CharacterButton, MainPage, QuitButton}, ressources::GameData, styles::{NORMAL_BUTTON_COLOR, button_style, get_button_text}};
+use crate::main_page::{assets::CharacterDefinitions, components::{CharacterButton, MainPage, QuitButton}, ressources::MainPageData, styles::{NORMAL_BUTTON_COLOR, button_style, get_button_text}};
 
 pub fn spawn_main_page(mut commands: Commands, asset_server: Res<AssetServer>,
-    game_data: Res<GameData>, characters: Res<Assets<CharacterDefinitions>>) {
+    game_data: Res<MainPageData>, characters: Res<Assets<CharacterDefinitions>>) {
     build_main_page(&mut commands, &asset_server, game_data, characters);
     println!("main_page Spawned");
 }
@@ -17,7 +17,7 @@ pub fn despawn_main_page(mut commands: Commands, main_page_query: Query<Entity, 
 }
 
 pub fn build_main_page(commands: &mut Commands, asset_server: &Res<AssetServer>, 
-    game_data: Res<GameData>, characters: Res<Assets<CharacterDefinitions>>) -> Entity {
+    main_page_data: Res<MainPageData>, characters: Res<Assets<CharacterDefinitions>>) -> Entity {
     let main_page_entity: Entity = commands.spawn((Node{
             // box_sizing: BoxSizing::BorderBox,
             width: Val::Percent(100.0),
@@ -37,7 +37,7 @@ pub fn build_main_page(commands: &mut Commands, asset_server: &Res<AssetServer>,
         ));
 
         //Character Button (stories)
-        if let Some(data) = characters.get(&game_data.characters) {
+        if let Some(data) = characters.get(&main_page_data.characters) {
             for character in &data.characters {
                 parent.spawn((
                     Button,

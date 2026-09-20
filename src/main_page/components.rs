@@ -7,7 +7,9 @@ pub struct MainPage {}
 #[derive(Deserialize, Debug)]
 pub struct CharacterDefinition{
     pub name: String,
-    pub description: String
+    pub description: String,
+    pub personality_traits: Vec<String>,
+    pub interests: Vec<String>
 }
 
 #[derive(Deserialize)]

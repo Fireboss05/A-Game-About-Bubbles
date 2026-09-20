@@ -29,9 +29,9 @@ impl Plugin for MainPagePlugin{
 
 }
 
-pub struct GameDataPlugin;
+pub struct MainPageDataPlugin;
 
-impl Plugin for GameDataPlugin {
+impl Plugin for MainPageDataPlugin {
     fn build(&self, app: &mut App) {
         app.init_asset::<CharacterDefinitions>()
             .register_asset_loader(CharacterDefinitionsLoader);

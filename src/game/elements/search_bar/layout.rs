@@ -8,7 +8,7 @@ use bevy::feathers::{
     theme::ThemedText,
 };
 
-pub fn search_bar(question: &QuestionDefinition, choices: &[ChoiceDefinition]) -> impl Scene {
+pub fn search_bar(question: QuestionDefinition, choices: Vec<ChoiceDefinition>) -> impl Scene {
     let question_text = question.text;
     bsn! {
         @FeathersMenu
@@ -25,7 +25,7 @@ pub fn search_bar(question: &QuestionDefinition, choices: &[ChoiceDefinition]) -
             (
                 @FeathersMenuPopup
                 Children[
-                    {build_menu_items(&choices)}
+                    {build_menu_items(choices)}
                 ]
             )
         ]
@@ -33,9 +33,9 @@ pub fn search_bar(question: &QuestionDefinition, choices: &[ChoiceDefinition]) -
     }
 }
 
-fn build_menu_items(choices: &[ChoiceDefinition]) -> impl SceneList {
+fn build_menu_items(choices: Vec<ChoiceDefinition>) -> impl SceneList {
     let items = choices.iter().map(|choice| {
-        let text = choice.text;
+        let text = choice.clone().text;
         let id = choice.id;
         bsn!{(
                 @FeathersMenuItem {

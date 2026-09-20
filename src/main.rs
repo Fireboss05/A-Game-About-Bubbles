@@ -27,17 +27,17 @@ use game::GamePlugin;
 mod systems;
 use systems::*;
 
-use crate::loading::systems::wait;
-use crate::main_page::GameDataPlugin;
+use crate::game::GameDataPlugin;
+use crate::main_page::MainPageDataPlugin;
 
 fn main() {
     let mut app = App::new();
     app.add_plugins(DefaultPlugins);
     app.init_state::<AppState>();
-    app.add_plugins((MainPagePlugin, GamePlugin, GameDataPlugin, FeathersPlugins));
+    app.add_plugins((MainPagePlugin, MainPageDataPlugin, GamePlugin, GameDataPlugin, FeathersPlugins));
     app.insert_resource(UiTheme(create_light_theme()));
     app.add_systems(Startup, spawn_camera);
-    app.add_systems(Startup, load_game_data);
+    app.add_systems(Startup, (load_main_page_data, load_game_data));
     app.add_systems(Update, wait_for_game_data.run_if(in_state(AppState::Loading)),);
     app.add_systems(Update, transition_to_main_page_state);
     app.add_systems(Update, transition_to_game_state);

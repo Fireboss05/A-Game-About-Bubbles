@@ -2,8 +2,10 @@ use bevy::prelude::*;
 use bevy::window::PrimaryWindow;
 
 use crate::AppState;
+use crate::game::assets::{ChoiceDefinitions, QuestionDefinitions};
+use crate::game::ressources::GameData;
 use crate::main_page::assets::CharacterDefinitions;
-use crate::main_page::ressources::GameData;
+use crate::main_page::ressources::MainPageData;
 
 pub fn transition_to_main_page_state(
     keyboard_input: Res<ButtonInput<KeyCode>>,
@@ -42,14 +44,29 @@ pub fn spawn_camera(mut commands: Commands, window_query: Query<&Window, With<Pr
         )));
 }
 
-pub fn load_game_data(
+pub fn load_main_page_data(
     mut commands: Commands,
     asset_server: Res<AssetServer>,
 ) {
     let characters: Handle<CharacterDefinitions> =
         asset_server.load("characters/characters.json");
 
-    commands.insert_resource(GameData {
+    commands.insert_resource(MainPageData {
         characters,
+    });
+}
+
+pub fn load_game_data(
+    mut commands: Commands,
+    asset_server: Res<AssetServer>,
+) {
+    let questions: Handle<QuestionDefinitions> =
+        asset_server.load("questions/questions.json");
+    let choices: Handle<ChoiceDefinitions> =
+        asset_server.load("choices/choices.json");
+
+    commands.insert_resource(GameData {
+        questions,
+        choices
     });
 }

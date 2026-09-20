@@ -1,4 +1,5 @@
 use bevy::prelude::Component;
+use serde::Deserialize;
 
 #[derive(Component, Clone, Copy, Default)]
 pub struct Browser {}
@@ -7,15 +8,29 @@ pub struct Browser {}
 #[derive(Component, Clone, Copy, Default)]
 pub struct SearchBar {}
 
-pub struct QuestionDefinition<'a>{
+
+#[derive(Deserialize, Debug, Clone)]
+pub struct QuestionDefinition{
     pub id: u32,
-    pub text: &'a str
+    pub character_name: String,
+    pub text: String,
 }
 
-pub struct ChoiceDefinition<'a>{
+#[derive(Deserialize, Debug, Clone)]
+pub struct ChoiceDefinition{
     pub id: u32,
     pub question_id: u32,
-    pub text: &'a str
+    pub text: String,
+}
+
+#[derive(Deserialize)]
+pub struct QuestionDefinitionsFile {
+    pub questions: Vec<QuestionDefinition>,
+}
+
+#[derive(Deserialize)]
+pub struct ChoiceDefinitionsFile {
+    pub choices: Vec<ChoiceDefinition>,
 }
 
 #[derive(Component, Clone, Copy, Default)]

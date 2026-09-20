@@ -1,16 +1,17 @@
 use bevy::prelude::*;
 
 use crate::game::{
-    components::{
+    assets::{ChoiceDefinitions, QuestionDefinitions}, components::{
         // AIResult, 
         Browser, ChoiceDefinition, QuestionDefinition, 
         // SearchBar, Website
-    }, elements::search_bar::layout::*
+    }, elements::search_bar::layout::*, ressources::GameData
 };
 
 
-pub fn spawn_game(mut commands: Commands) {
-    commands.spawn_scene(build_game());
+pub fn spawn_game(mut commands: Commands, game_data: Res<GameData>, 
+    questions: Res<Assets<QuestionDefinitions>>, choices: Res<Assets<ChoiceDefinitions>>) {
+    commands.spawn_scene(build_game(game_data, questions, choices));
     println!("game Spawned");
 }
 
@@ -23,7 +24,34 @@ pub fn despawn_game(mut commands: Commands, game_query: Query<Entity, With<Brows
     
 }
 
-pub fn build_game() -> impl Scene {
+pub fn build_game(game_data: Res<GameData>, questions: Res<Assets<QuestionDefinitions>>, choices: Res<Assets<ChoiceDefinitions>>
+) -> impl Scene {
+    let questions_data = questions
+        .get(&game_data.questions)
+        .expect("Questions not loaded");
+
+    let selected_question :&QuestionDefinition = questions_data
+        .questions
+        .iter()
+        .find(|question| {
+            question.character_name == "Daniel"
+                && question.id == 1
+        })
+        .expect("Question not found");
+
+    let choices_data = choices
+        .get(&game_data.choices)
+        .expect("Choices not loaded");
+
+    let selected_choices: Vec<ChoiceDefinition> = choices_data
+        .choices
+        .iter()
+        .filter(|choice| {
+            choice.question_id == selected_question.id
+        })
+        .cloned()
+        .collect();
+    
     bsn! {
         Node{
             // box_sizing: BoxSizing::BorderBox,
@@ -35,18 +63,7 @@ pub fn build_game() -> impl Scene {
         BackgroundColor(Color::srgb(0.968627451, 0.8705882353, 0.6705882353))
         Children [
             //Searche Bar / Select bar
-            search_bar(&QuestionDefinition{
-                id: 1,
-                text: "How to"
-            }, &[ChoiceDefinition{
-                id: 1,
-                question_id: 1,
-                text: "create my own brand"
-            },ChoiceDefinition{
-                id: 1,
-                question_id: 2,
-                text: "take my business to the next level"
-            }])
+            search_bar(selected_question.clone(), selected_choices.clone())
             
             //AI Results
             // bsn! {
