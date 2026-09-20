@@ -27,7 +27,7 @@ use game::GamePlugin;
 mod systems;
 use systems::*;
 
-use crate::game::GameDataPlugin;
+use crate::game::{DefeatPlugin, GameDataPlugin, VictoryPlugin};
 use crate::game::components::ChoiceSelected;
 use crate::main_page::MainPageDataPlugin;
 use crate::main_page::ressources::GameSession;
@@ -40,6 +40,7 @@ fn main() {
     app.add_message::<ChoiceSelected>();
 
     app.add_plugins((MainPagePlugin, MainPageDataPlugin, GamePlugin, GameDataPlugin, FeathersPlugins));
+    app.add_plugins((VictoryPlugin, DefeatPlugin));
     app.insert_resource(UiTheme(create_light_theme()));
     app.add_systems(Startup, spawn_camera);
     app.add_systems(Startup, (load_main_page_data, load_game_data));
@@ -58,4 +59,6 @@ pub enum AppState {
     MainPage,
     Game,
     GameOver,
+    Won,
+    Lost,
 }

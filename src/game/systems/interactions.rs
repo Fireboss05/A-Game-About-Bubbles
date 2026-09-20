@@ -44,7 +44,7 @@ pub fn interact_with_choice_button(
             .question_number
             .expect("No current question");
 
-        if choice_selected.value != 9{
+        if won(choice_selected){
             let next_question = questions
                 .get(&game_data.questions)
                 .expect("Questions not loaded")
@@ -64,13 +64,15 @@ pub fn interact_with_choice_button(
 
                 None => {
                     // 
-                    // app_state_next_state.set(AppState::Lost);
+                    app_state_next_state.set(AppState::Lost);
                 }
             }
-
-                //should reload browser since the question changes
         }else{
-            // app_state_next_state.set(AppState::Won);
+            app_state_next_state.set(AppState::Won);
         }
     }
+}
+
+pub fn won(choice_selected: ChoiceDefinition) -> bool{
+    choice_selected.value != 9
 }

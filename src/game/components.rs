@@ -13,8 +13,6 @@ pub struct ChoiceSelected {
     pub choice_id: u32,
 }
 
-
-
 #[derive(Deserialize, Debug, Clone)]
 pub struct QuestionDefinition{
     pub id: u32,
@@ -53,4 +51,8 @@ pub struct ChoiceMenuItem {
 // #[derive(Component, Clone, Copy, Default)]
 // pub struct Website {}
 
+#[derive(Component)]
+pub struct VictoryScreen;
 
+#[derive(Component)]
+pub struct DefeatScreen;
