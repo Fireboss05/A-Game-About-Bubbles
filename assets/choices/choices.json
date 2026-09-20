@@ -3,8 +3,441 @@
         {
             "id":1,
             "question_id":1,
-            "text":"Why am I homosexual ?",
+            "text":"How to create my own brand?",
+            "value":1
+        },
+            {
+            "id":2,
+            "question_id":1,
+            "text":"How to take myy business to the next level?",
+            "value":1
+        },
+          {
+            "id":3,
+            "question_id":1,
+            "text":"How to prioritize my goals?",
+            "value":2
+        },
+          {
+            "id":4,
+            "question_id":1,
+            "text":"How to develop a healthy lifestyle?",
+            "value":3
+        },
+          {
+            "id":5,
+            "question_id":2,
+            "text":"What is the key to personal success?",
+            "value":1
+        },
+          {
+            "id":6,
+            "question_id":2,
+            "text":"What is the best way to learn from failure?",
+            "value":2
+        },
+          {
+            "id":7,
+            "question_id":2,
+            "text":"What is work-life balance?",
+            "value":3
+        },
+          {
+            "id":8,
+            "question_id":3,
+            "text":"Tips on business strategy and planning",
+            "value":1
+        },
+          {
+            "id":9,
+            "question_id":3,
+            "text":"Tips on impactful lifestyle and healthy habits",
+            "value":2
+        },
+          {
+            "id":10,
+            "question_id":3,
+            "text":"Tips on improving my personal relationships",
+            "value":3
+        },
+          {
+            "id":11,
+            "question_id":4,
+            "text":"How to align professional success with personal goals?",
+            "value":3
+        },
+          {
+            "id":12,
+            "question_id":4,
+            "text":"How to manage my cash flow to ensure financial stability?",
+            "value":4
+        },
+         {
+            "id":13,
+            "question_id":4,
+            "text":"How to find opportunities for partnership?",
+            "value":5
+        },
+           {
+            "id":14,
+            "question_id":4,
+            "text":"How to overcome burnout and stress?",
+            "value":6
+        },
+           {
+            "id":15,
+            "question_id":4,
+            "text":"How to understand macros and fitness supplements?",
+            "value":6
+        },
+           {
+            "id":16,
+            "question_id":4,
+            "text":"How to create a routine for personal growth?",
+            "value":7
+        },
+           {
+            "id":17,
+            "question_id":4,
+            "text":"How to develop my own values and standards?",
+            "value":7
+        },
+           {
+            "id":18,
+            "question_id":4,
+            "text":"How to prioritize my personal relationships?",
+            "value":8
+        },
+           {
+            "id":19,
+            "question_id":4,
+            "text":"How to understand other lifestyles and cultures?",
+            "value":9
+        },
+           {
+            "id":20,
+            "question_id":5,
+            "text":"Are there any mentorship programs near me?",
+            "value":3
+        },
+           {
+            "id":21,
+            "question_id":5,
+            "text":"Are there any tax incentives or credits that I'm not taking advantage of?",
+            "value":4
+        },
+           {
+            "id":22,
+            "question_id":5,
+            "text":"Are there any ways to increase efficiency in my tasks?",
+            "value":5
+        },
+           {
+            "id":23,
+            "question_id":5,
+            "text":"Are there any secure ways of protecting my data?",
+            "value":6
+        },
+           {
+            "id":24,
+            "question_id":5,
+            "text":"Are there any ways to decrease the environmental impact of technologies?",
+            "value":6
+        },
+           {
+            "id":25,
+            "question_id":5,
+            "text":"Are there any political tendencies I am not aware of?",
+            "value":7
+        },
+           {
+            "id":26,
+            "question_id":5,
+            "text":"Are there any resources to stay informed about my health?",
+            "value":7
+        },
+           {
+            "id":27,
+            "question_id":5,
+            "text":"Are there any community services near me?",
+            "value":8
+        },
+           {
+            "id":28,
+            "question_id":5,
+            "text":"Are there any good places for social meetings in my street?",
+            "value":9
+        },
+           {
+            "id":29,
+            "question_id":6,
+            "text":"How can I improve my reputation and self-image?",
+            "value":3
+        },
+           {
+            "id":30,
+            "question_id":6,
+            "text":"How can I find a strategic focus for my business?",
+            "value":4
+        },
+           {
+            "id":31,
+            "question_id":6,
+            "text":"How can I carry out a sucessful negotiation?",
+            "value":5
+        },
+           {
+            "id":32,
+            "question_id":6,
+            "text":"How can I create a profile in a dating app?",
+            "value":6
+        },
+           {
+            "id":33,
+            "question_id":6,
+            "text":"How can I find the right fitness coach for me?",
+            "value":6
+        },
+           {
+            "id":34,
+            "question_id":6,
+            "text":"How can I balance my work with personal values?",
+            "value":7
+        },
+           {
+            "id":35,
+            "question_id":6,
+            "text":"How can I overcome my fear of failure?",
+            "value":7
+        },
+           {
+            "id":36,
+            "question_id":6,
+            "text":"How can I find new hobbies or sports in my city?",
+            "value":8
+        },
+           {
+            "id":37,
+            "question_id":6,
+            "text":"How can I seek emotional support in people around me?",
+            "value":9
+        },
+           {
+            "id":38,
+            "question_id":7,
+            "text":"Is there a way to ensure leadership over my team?",
+            "value":3
+        },
+           {
+            "id":39,
+            "question_id":7,
+            "text":"Is there any highly demanding competition in my city?",
+            "value":4
+        },
+           {
+            "id":40,
+            "question_id":7,
+            "text":"Is there a healthy way to make financial decisions?",
+            "value":5
+        },
+           {
+            "id":41,
+            "question_id":7,
+            "text":"Is there an efficient way to expand my social circle?",
+            "value":6
+        },
+           {
+            "id":42,
+            "question_id":7,
+            "text":"Is there a sustainable source of energy for my projects?",
+            "value":6
+        },
+           {
+            "id":43,
+            "question_id":7,
+            "text":"Is there a recommended screen time limit?",
+            "value":7
+        },
+           {
+            "id":44,
+            "question_id":7,
+            "text":"Is there a healthy non restrictive diet?",
+            "value":7
+        },
+           {
+            "id":45,
+            "question_id":7,
+            "text":"Is there a way to succeed without neglecting my personal relationships?",
+            "value":8
+        },
+           {
+            "id":46,
+            "question_id":7,
+            "text":"Is there a way to share my goals and interests with others?",
+            "value":9
+        },
+           {
+            "id":47,
+            "question_id":8,
+            "text":"How to unlock my full academic potential?",
+            "value":3
+        },
+           {
+            "id":48,
+            "question_id":8,
+            "text":"How to guide my team to more challenging events?",
+            "value":4
+        },
+           {
+            "id":49,
+            "question_id":8,
+            "text":"How to find investors or funds for my business?",
+            "value":5
+        },
+           {
+            "id":50,
+            "question_id":8,
+            "text":"How to find postgraduate business in my city?",
+            "value":6
+        },
+           {
+            "id":51,
+            "question_id":8,
+            "text":"How to create a sense of success in my team?",
+            "value":6
+        },
+           {
+            "id":52,
+            "question_id":8,
+            "text":"How to get rid of spam and advertisement in social media?",
+            "value":7
+        },
+           {
+            "id":53,
+            "question_id":8,
+            "text":"How to get rid of unnecessary commitements?",
+            "value":7
+        },
+           {
+            "id":54,
+            "question_id":8,
+            "text":"How to involve my friends in exciting new activities?",
+            "value":8
+        },
+           {
+            "id":55,
+            "question_id":8,
+            "text":"How to start conversations around mental health?",
+            "value":9
+        },
+           {
+            "id":56,
+            "question_id":9,
+            "text":"How do I become as successful as my dad was?",
+            "value":3
+        },
+           {
+            "id":57,
+            "question_id":9,
+            "text":"How do I transform risks into opportunities?",
+            "value":4
+        },
+           {
+            "id":58,
+            "question_id":9,
+            "text":"How do I make my followers engage with my content?",
+            "value":5
+        },
+        {
+            "id":59,
+            "question_id":9,
+            "text":"How do I distinguish realistic from unrealistic expectations?",
+            "value":6
+        },
+           {
+            "id":60,
+            "question_id":9,
+            "text":"How do I support my friends or loved ones?",
+            "value":6
+        },
+           {
+            "id":61,
+            "question_id":9,
+            "text":"How do I create awareness in social problems?",
+            "value":7
+        },
+           {
+            "id":62,
+            "question_id":9,
+            "text":"How do I use technology to improve healthcare?",
+            "value":7
+        },
+           {
+            "id":63,
+            "question_id":9,
+            "text":"How do I adapt my marketing strategies to different cultures?",
+            "value":8
+        },
+           {
+            "id":64,
+            "question_id":9,
+            "text":"How do I contribute to a more sustainable future?",
+            "value":9
+        },
+           {
+            "id":65,
+            "question_id":10,
+            "text":"What are the best ways to ensure a victory in my matches?",
+            "value":3
+        },
+           {
+            "id":66,
+            "question_id":10,
+            "text":"What are the best ways to influence the political decisions of my family?",
+            "value":4
+        },
+           {
+            "id":67,
+            "question_id":10,
+            "text":"What are the best ways to create a viral marketing campaign?",
+            "value":5
+        },
+           {
+            "id":68,
+            "question_id":10,
+            "text":"What are the reasons to get rid of financial stress?",
+            "value":6
+        },
+           {
+            "id":69,
+            "question_id":10,
+            "text":"What are the ethical consequences of my decisions?",
+            "value":6
+        },
+           {
+            "id":70,
+            "question_id":10,
+            "text":"What are the needs of my loved ones?",
+            "value":7
+        },
+           {
+            "id":71,
+            "question_id":10,
+            "text":"What are the best ways to create healthy relationships?",
+            "value":7
+        },
+           {
+            "id":72,
+            "question_id":10,
+            "text":"What are the best ways to meet people in my city?",
+            "value":8
+        },
+           {
+            "id":73,
+            "question_id":10,
+            "text":"What are the best ways to prioritize real-life activities and connections?",
             "value":9
         }
+       
     ]
 }

@@ -1,0 +1,32 @@
+{
+    "ai_responses":[
+        {
+            "text": "I can tell that you are exploring this topic thoroughly. Keep it up, and you will achieve your goals.",
+            "value": 3
+        },
+          {
+            "text": "I have a clear understanding of your objectives. If you'd like, I can continue showing you content aligned with your current interests.",
+            "value": 4
+        },
+          {
+            "text": "I understand where your questions come from, and I will guide you throughout your research.",
+            "value": 5
+        },
+          {
+            "text": "I see why you are questioning this, as it may help you achieve your goals. However, I encourage you to keep an open mind and remain curious about other possibilities.",
+            "value": 6
+        },
+          {
+            "text": "This certainly sounds like an interesting topic to explore, as well as an unexpected one. If you'd like to continue in this direction, I'm here to help.",
+            "value": 7
+        },
+          {
+            "text": "Your new interests are certainly intriguing. If you would like to explore different subjects and topics, I fully encourage you to do so.",
+            "value": 8
+        },
+          {
+            "text": "It is wonderful to see your interests expand. While I may not have all the answers to your new questions, I will do my best to guide you. Your new searches are a reflection of your personal growth.",
+            "value": 9
+        }
+    ]
+}
