@@ -1,13 +1,19 @@
 use bevy::prelude::*;
 
 pub mod components;
+pub mod ressources;
 pub mod styles;
 pub mod systems;
+pub mod assets;
 
 use systems::layout::*;
 use systems::interactions::*;
 
 use crate::AppState;
+use crate::main_page::assets::{
+    CharacterDefinitionsLoader,
+    CharacterDefinitions
+};
 
 pub struct MainPagePlugin;
 
@@ -21,4 +27,13 @@ impl Plugin for MainPagePlugin{
         );
     }
 
+}
+
+pub struct GameDataPlugin;
+
+impl Plugin for GameDataPlugin {
+    fn build(&self, app: &mut App) {
+        app.init_asset::<CharacterDefinitions>()
+            .register_asset_loader(CharacterDefinitionsLoader);
+    }
 }

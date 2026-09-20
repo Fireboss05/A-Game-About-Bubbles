@@ -1,8 +1,10 @@
 {
     "characters":[
         {
-            "name":"Daniel",
-            "description":"He is a man"
+          "name": "Daniel",
+          "description": "He is a man",
+          "personality_traits": ["ambitious", "dedicated"],
+          "interests": ["gym and fitness"]
         }
     ]
 }
